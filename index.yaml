@@ -3,7 +3,7 @@ entries:
   consumption-report:
   - apiVersion: v2
     appVersion: v0.0.6
-    created: "2025-02-21T05:44:30.761773-08:00"
+    created: "2025-02-21T05:58:32.442532-08:00"
     description: A Helm chart for Kubernetes
     digest: 6ce5422f5eb40a10e001b67f298e746b32ed576c54ff21bd4440449e409c79c0
     name: consumption-report
@@ -11,4 +11,4 @@ entries:
     urls:
     - consumption-report-0.0.1.tgz
     version: 0.0.1
-generated: "2025-02-21T05:44:30.756496-08:00"
+generated: "2025-02-21T05:58:32.436599-08:00"
