@@ -6,6 +6,9 @@ on:
       - main
     paths:
       - "charts/**"
+      - "metrics/**"
+  repository_dispatch:
+    types: [trigger-helm-release]
 
 jobs:
   release:
@@ -20,19 +23,28 @@ jobs:
         with:
           version: latest
 
+      - name: Clone Private Helm Chart Repository
+        run: |
+          git clone https://github.com/runai-professional-services/consumption-csv-report.git metrics-chart
+
+      - name: Ignore metrics-chart from Git tracking
+        run: |
+          echo "metrics-chart/" >> .gitignore
+          git rm -r --cached metrics-chart || true
+
       - name: Package Helm Chart
         run: |
-          cd charts/mychart
+          cd metrics-chart/chart/consumption-report
           helm package .
-          mv mychart-*.tgz ../../
+          mv consumption-report* ../../../metrics/
+          cd ..
 
       - name: Update Helm Repo Index
         run: |
-          git fetch origin gh-pages
-          git checkout gh-pages
-          mv ../mychart-*.tgz .
-          helm repo index --url https://yourusername.github.io/your-repo/ --merge index.yaml .
+          git config --global user.email "brad.soper@run.ai"
+          git config --global user.name "Brad Soper"
+          helm repo index --url https://runai-professional-services.github.io/helm-charts/metrics --merge index.yaml --merge index.yaml .
           git add .
           git commit -m "Update Helm chart index"
-          git push origin gh-pages
+          git push origin main
 
