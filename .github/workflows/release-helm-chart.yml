@@ -20,19 +20,23 @@ jobs:
         with:
           version: latest
 
+      - name: Clone Private Helm Chart Repository
+        run: |
+          git clone https://github.com/runai-professional-services/consumption-csv-report.git metrics-chart
+
       - name: Package Helm Chart
         run: |
-          cd charts/mychart
+          cd metrics-chart/chart/consumption-report
           helm package .
-          mv mychart-*.tgz ../../
+          ls ../../../
 
-      - name: Update Helm Repo Index
-        run: |
-          git fetch origin gh-pages
-          git checkout gh-pages
-          mv ../mychart-*.tgz .
-          helm repo index --url https://yourusername.github.io/your-repo/ --merge index.yaml .
-          git add .
-          git commit -m "Update Helm chart index"
-          git push origin gh-pages
+#      - name: Update Helm Repo Index
+#        run: |
+  #          git fetch origin gh-pages
+  #        git checkout gh-pages
+  #        mv ../mychart-*.tgz .
+  #        helm repo index --url https://yourusername.github.io/your-repo/ --merge index.yaml .
+  #        git add .
+  #        git commit -m "Update Helm chart index"
+  #        git push origin gh-pages
 
