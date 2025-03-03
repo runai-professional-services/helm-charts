@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "charts/**"
+      - "metrics/**"
 
 jobs:
   release:
@@ -28,15 +29,13 @@ jobs:
         run: |
           cd metrics-chart/chart/consumption-report
           helm package .
-          ls ../../../
+          mv consumption-report* ../../../metrics/
+          cd ..
 
-#      - name: Update Helm Repo Index
-#        run: |
-  #          git fetch origin gh-pages
-  #        git checkout gh-pages
-  #        mv ../mychart-*.tgz .
-  #        helm repo index --url https://yourusername.github.io/your-repo/ --merge index.yaml .
-  #        git add .
-  #        git commit -m "Update Helm chart index"
-  #        git push origin gh-pages
+      - name: Update Helm Repo Index
+        run: |
+          helm repo index --url https://runai-professional-services.github.io/helm-charts/metrics --merge index.yaml --merge index.yaml .
+          git add .
+          git commit -m "Update Helm chart index"
+          git push origin main
 
