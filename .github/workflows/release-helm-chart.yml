@@ -25,6 +25,11 @@ jobs:
         run: |
           git clone https://github.com/runai-professional-services/consumption-csv-report.git metrics-chart
 
+      - name: Ignore metrics-chart from Git tracking
+        run: |
+          echo "metrics-chart/" >> .gitignore
+          git rm -r --cached metrics-chart || true
+
       - name: Package Helm Chart
         run: |
           cd metrics-chart/chart/consumption-report
@@ -34,6 +39,8 @@ jobs:
 
       - name: Update Helm Repo Index
         run: |
+          git config --global user.email "brad.soper@run.ai"
+          git config --global user.name "Brad Soper"
           helm repo index --url https://runai-professional-services.github.io/helm-charts/metrics --merge index.yaml --merge index.yaml .
           git add .
           git commit -m "Update Helm chart index"
