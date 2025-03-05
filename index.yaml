@@ -3,9 +3,9 @@ entries:
   consumption-report:
   - apiVersion: v2
     appVersion: v0.0.9
-    created: "2025-03-05T23:25:31.953743616Z"
+    created: "2025-03-05T23:40:20.875535796Z"
     description: A Helm chart for Kubernetes
-    digest: ad199de15213dc8ce5ba7c4a0ab63f3a628a5d0225b2196458cfe983886de911
+    digest: d93ef4ec95a266a8cfc882e9bb7b99c195ae1170c5b76672d7ac8a24f803ccb6
     name: consumption-report
     type: application
     urls:
@@ -13,7 +13,7 @@ entries:
     version: 0.0.3
   - apiVersion: v2
     appVersion: v0.0.9
-    created: "2025-03-05T23:25:31.953324674Z"
+    created: "2025-03-05T23:40:20.875175021Z"
     description: A Helm chart for Kubernetes
     digest: fd0504d12df2ece34dc4d4512d36a15355d764b0dad596d069734a8905499218
     name: consumption-report
@@ -23,7 +23,7 @@ entries:
     version: 0.0.2
   - apiVersion: v2
     appVersion: v0.0.7
-    created: "2025-03-05T23:25:31.952854086Z"
+    created: "2025-03-05T23:40:20.874820488Z"
     description: A Helm chart for Kubernetes
     digest: b04ebf10da3c6e6e6a3b551e6d3cd3bf24a0b1eb2884c930288cca526280f26a
     name: consumption-report
@@ -31,4 +31,4 @@ entries:
     urls:
     - https://runai-professional-services.github.io/helm-charts/metrics/metrics/consumption-report-0.0.1.tgz
     version: 0.0.1
-generated: "2025-03-05T23:25:31.952278672Z"
+generated: "2025-03-05T23:40:20.87433464Z"
