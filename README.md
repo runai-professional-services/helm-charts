@@ -50,7 +50,7 @@ cron:
 
 8. You should now have the following installed:
     a. cronjob in the `runai` namespace called `metrics-consumption-report`. You can manually
-    run the cronjob with the following command `kubectl create job <job-name> --from=cronjob/metrics-consumption-report`
+    run the cronjob with the following command `kubectl -n runai create job <job-name> --from=cronjob/metrics-consumption-report`
 
 9. During the install NOTES are provided on additional functionality. You can always view the
 notes by running:
