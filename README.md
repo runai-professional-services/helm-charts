@@ -46,7 +46,7 @@ cron:
 
 7. Install the Helm chart with the following command:
 
-`helm upgrade -i metrics -n runai . -f ./metrics.yaml`
+`helm upgrade -i metrics -n runai metrics/consumption-report -f ./metrics.yaml`
 
 8. You should now have the following installed:
     a. cronjob in the `runai` namespace called `metrics-consumption-report`. You can manually
@@ -54,7 +54,7 @@ cron:
 
 9. During the install NOTES are provided on additional functionality. You can always view the
 notes by running:
-`helm upgrade -i metrics -n runai . -f ./metrics.yaml --dry-run`
+`helm upgrade -i metrics -n runai metrics/consumption-report -f ./metrics.yaml --dry-run`
 
 ## How to uninstall the Helm chart
 1. You can delete the helm chart if needed by running the following

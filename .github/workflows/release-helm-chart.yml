@@ -42,7 +42,7 @@ jobs:
         run: |
           git config --global user.email "brad.soper@run.ai"
           git config --global user.name "Brad Soper"
-          helm repo index --url https://runai-professional-services.github.io/helm-charts/metrics --merge index.yaml --merge index.yaml .
+          helm repo index --url https://runai-professional-services.github.io/helm-charts --merge index.yaml --merge index.yaml .
           git add .
           git commit -m "Update Helm chart index"
           git push origin main
