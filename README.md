@@ -1,8 +1,8 @@
-#### Professional Services  Helm Charts
+# Professional Services Helm Charts
 
-# Metrics Report Helm Chart
+## Metrics Report Helm Chart
 
-## How to install
+### How to install
 
 1. Install Helm:
 
@@ -71,7 +71,7 @@
     helm upgrade -i metrics -n runai-metrics metrics/consumption-report -f metrics.yaml --dry-run
     ```
 
-## How to copy the .csv files locally
+### How to copy the .csv files locally
 
 1. Download the v2 Run:ai cli.
 
@@ -103,7 +103,7 @@
     runai workload delete metrics -p metrics
     ```
 
-## How to uninstall the Metrics Helm chart
+### How to uninstall the Metrics Helm chart
 
 1. You can delete the helm chart if needed by running the following:
 
